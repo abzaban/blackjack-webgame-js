@@ -1,0 +1,65 @@
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: "Ysabeau";
+}
+
+header {
+    background-color: black;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    background-color: #02483e;
+    height: 90vh;
+}
+
+button {
+    transition: 0.2s;
+    width: 80px;
+    height: 30px;
+    background-color: #6b6b6b;
+    border: solid 1px #6b6b6b;
+    border-radius: 5px;
+    color: #fff;
+    margin: 2px;
+}
+
+button:hover {
+    transition: 0.2s;
+    background-color: #5579c6;
+    border-color: #5579c6;
+}
+
+.disabled {
+    background-color: #ccc;
+}
+
+.disabled:hover {
+    background-color: #ccc;
+}
+
+#buttons-container {
+    text-align: center;
+    padding: 10px;
+}
+
+.hand-container {
+    height: 35vh;
+    padding: 10px;
+}
+
+.cards-container img {
+    margin: 3px;
+}

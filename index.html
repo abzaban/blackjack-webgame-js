@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackJack Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>BlackJack</h1>
+    </header>
+    <main>
+        <div id="buttons-container">
+            <button onclick="newGame()">New game</button>
+            <button id="ask-btn" onclick="askCard()">Ask card</button>
+            <button onclick="stopGame()">Stop</button>
+        </div>
+        <div class="hand-container">
+            <h2>Player</h2>
+            <div class="cards-container"></div>
+        </div>
+        <div class="hand-container">
+            <h2>Computer</h2>
+            <div class="cards-container"></div>
+        </div>
+    </main>
+</body>
+
+<script src="assets/js/underscore-min.js"></script>
+<script src="assets/js/app.js"></script>
+
+</html>
