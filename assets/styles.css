@@ -23,6 +23,7 @@ header h1 {
 main {
     background-color: #02483e;
     height: 90vh;
+    overflow: auto;
 }
 
 button {
