@@ -16,7 +16,7 @@ const newGame = () => {
     deck = [];
     initDeck();
 
-    let hands = document.getElementsByClassName('cards-container');
+    let hands = document.querySelectorAll('.cards-container');
     for (hand of hands)
         hand.innerHTML = '';
 
@@ -30,7 +30,7 @@ const newGame = () => {
 const askCard = async () => {
     playerHand.push(deck.pop());
 
-    let hand = document.getElementsByClassName('cards-container')[0];
+    let hand = document.querySelectorAll('.cards-container')[0];
     hand.innerHTML += `<img src="assets/img/${playerHand[playerHand.length - 1]}.png" width="100vw">`;
 
     if (calculateTotal(playerHand) > 21) {
@@ -56,12 +56,15 @@ const stopGame = () => {
     disableBtn('stop-btn', true);
 }
 
+const getCardValue = (card) => {
+    let value = card.substring(0, card.length - 1);
+    return (!isNaN(value)) ? value * 1 : (value === 'A') ? 11 : 10;
+}
+
 const calculateTotal = (hand) => {
     let total = 0;
-    for (card of hand) {
-        let letter = card.charAt(0)
-        total += (letter === 'A') ? 1 : (letter === 'J') ? 11 : (letter === 'Q') ? 12 : (letter === 'K') ? 13 : (card.slice(0, 2) === '10') ? 10 : parseInt(letter);
-    }
+    for (card of hand)
+        total += getCardValue(card);
 
     return total;
 }
@@ -69,7 +72,7 @@ const calculateTotal = (hand) => {
 const pcTurn = () => {
     computerHand.push(deck.pop());
 
-    let hand = document.getElementsByClassName('cards-container')[1];
+    let hand = document.querySelectorAll('.cards-container')[1];
     hand.innerHTML += `<img src="assets/img/${computerHand[computerHand.length - 1]}.png" width="100vw">`;
 }
 
@@ -83,7 +86,7 @@ const checkWinner = (totalPlayer, totalComputer) => {
 }
 
 const disableBtn = (btnId, disable) => {
-    let btn = document.getElementById(btnId);
+    let btn = document.querySelector(`#${btnId}`);
     btn.disabled = disable;
     if (disable)
         btn.classList.add('disabled');

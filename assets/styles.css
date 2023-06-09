@@ -43,6 +43,12 @@ button:hover {
     border-color: #5579c6;
 }
 
+img {
+    position: relative;
+    left: 100px;
+    margin-left: -75px;
+}
+
 .disabled {
     background-color: #ccc;
 }
@@ -53,14 +59,10 @@ button:hover {
 
 #buttons-container {
     text-align: center;
-    padding: 10px;
+    padding: 5px;
 }
 
 .hand-container {
-    height: 35vh;
-    padding: 10px;
-}
-
-.cards-container img {
-    margin: 3px;
+    height: 38vh;
+    padding: 5px;
 }
